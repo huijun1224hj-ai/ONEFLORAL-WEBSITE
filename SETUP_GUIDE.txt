@@ -1,0 +1,52 @@
+# One Floral 后台安装步骤
+
+## 1. 创建 Supabase
+https://supabase.com
+
+## 2. 建立 products table
+SQL Editor 运行：
+
+create table if not exists products (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz default now(),
+  title_cn text,
+  title_en text,
+  category text,
+  price text,
+  description text,
+  image_url text,
+  active boolean default true
+);
+
+alter table products enable row level security;
+
+create policy "Public read"
+on products
+for select
+using (true);
+
+create policy "Public insert"
+on products
+for insert
+with check (true);
+
+## 3. 建立 Storage Bucket
+Storage → New Bucket
+
+名称：
+product-images
+
+Public bucket：
+打开
+
+## 4. 修改 config.js
+
+填写：
+supabaseUrl
+supabaseAnonKey
+
+## 5. 上传 Github
+## 6. 用 Netlify 发布
+
+后台网址：
+/admin.html

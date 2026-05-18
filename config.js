@@ -1,5 +1,5 @@
 const SHOP = {
   whatsapp: "601121476568",
-  supabaseUrl: "PASTE_YOUR_SUPABASE_URL",
-  supabaseAnonKey: "PASTE_YOUR_SUPABASE_ANON_KEY"
+  supabaseUrl: "https://qxfaesuzpjpnbivwkrjt.supabase.co/rest/v1/",
+  supabaseAnonKey: "sb_publishable_FA8TXK059qBrgD5-JZ6yrw_6Bpyc-a1"
 };
